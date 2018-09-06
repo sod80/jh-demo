@@ -1,0 +1,2 @@
+# jh-demo
+Jhipster playground
