@@ -30,7 +30,6 @@ public class MessagingConfiguration {
     @Bean
     @InboundChannelAdapter(value = Source.OUTPUT)
     public MessageSource<String> timerMessageSource() {
-        return () -> new GenericMessage<>("Test message from JHipster sent at " +
-            new SimpleDateFormat().format(new Date()));
+        return () -> new GenericMessage<>("Test message from JHipster sent at " + new SimpleDateFormat().format(new Date()));
     }
 }
