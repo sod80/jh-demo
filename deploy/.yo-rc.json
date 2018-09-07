@@ -14,6 +14,13 @@
     "serviceDiscoveryType": "eureka",
     "adminPassword": "admin",
     "jwtSecretKey": "09f7c61c10e962affc3ace3b5a2c8220292887c5",
-    "clusteredDbApps": []
+    "clusteredDbApps": [],
+    "dockerRepositoryName": "",
+    "dockerPushCommand": "docker push",
+    "kubernetesNamespace": "default",
+    "kubernetesServiceType": "Ingress",
+    "ingressDomain": "default.192.168.99.100.nip.io",
+    "istio": "no",
+    "istioRoute": false
   }
 }
