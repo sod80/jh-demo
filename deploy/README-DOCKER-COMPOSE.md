@@ -12,9 +12,13 @@ Launch all your infrastructure by running: `docker-compose up -d`.
 ### Applications and dependencies:
 - blog (gateway application)
 - blog's mysql database
+- greeting (microservice application)
+- greeting's mongodb database
 - store (microservice application)
 - store's mysql database
 
 ### Additional Services:
 
+- Kafka
+- Zookeeper
 - [JHipster Console](http://localhost:5601)
