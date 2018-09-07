@@ -1,0 +1,25 @@
+// JDL definition for application 'store' generated with command 'jhipster export-jdl'
+
+entity Product {
+  name String required,
+  price BigDecimal required
+}
+
+entity Purchase {
+  description String required,
+  quantity Integer required
+  price BigDecimal required
+}
+
+relationship ManyToOne {
+    Purchase{product(name)} to Product
+}
+
+paginate Purchase with pagination
+service Purchase with serviceImpl
+microservice Purchase with store
+
+
+paginate Product with pagination
+service Product with serviceImpl
+microservice Product with store
