@@ -8,7 +8,7 @@
     "baseName": "greeting",
     "packageName": "com.sod.geeting",
     "packageFolder": "com/sod/geeting",
-    "serverPort": "8082",
+    "serverPort": "8083",
     "authenticationType": "jwt",
     "cacheProvider": "no",
     "enableHibernateCache": false,

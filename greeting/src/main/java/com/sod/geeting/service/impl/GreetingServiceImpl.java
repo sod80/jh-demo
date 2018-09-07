@@ -41,7 +41,7 @@ public class GreetingServiceImpl implements GreetingService {
 
         // Read from kafka
         // TODO
-        
+
         // Save to Repo
         return greetingRepository.save(greeting);
     }

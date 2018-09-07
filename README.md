@@ -12,6 +12,9 @@ https://www.jhipster.tech/
 ## Build maven
 ./mvnw verify -Pprod dockerfile:build
 
+## Build gradle
+./gradlew -Pprod build buildDocker
+
 ## Geberate docker-compose
 cd deploy/
 jhipster docker-compose
