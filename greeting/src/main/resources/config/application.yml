@@ -89,7 +89,21 @@ spring:
             enabled: false
     thymeleaf:
         mode: HTML
-
+    cloud:
+        stream:
+            kafka:
+                binder:
+                    brokers: localhost
+                    zk-nodes: localhost
+            bindings:
+                greetingsProducerChannel:
+                    destination: greetings-topic
+                greetingsConsumerChannel:
+                    destination: greetings-topic
+                    content-type: application/json
+# See MessagingConfiguration.java
+#                output:
+#                    destination: topic-jhipster
 server:
     servlet:
         session:

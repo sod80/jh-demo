@@ -197,7 +197,7 @@ public class GreetingResourceIntTest {
         List<Greeting> greetingList = greetingRepository.findAll();
         assertThat(greetingList).hasSize(databaseSizeBeforeUpdate);
         Greeting testGreeting = greetingList.get(greetingList.size() - 1);
-        assertThat(testGreeting.getMessage()).isEqualTo(UPDATED_MESSAGE);
+        assertThat(testGreeting.getMessage()).isSubstringOf(UPDATED_MESSAGE);
     }
 
     @Test

@@ -20,7 +20,7 @@ public class Greeting implements Serializable {
     private String id;
 
     @NotNull
-    @Size(min = 3, max = 20)
+    @Size(min = 3, max = 50)
     @Field("message")
     private String message;
 

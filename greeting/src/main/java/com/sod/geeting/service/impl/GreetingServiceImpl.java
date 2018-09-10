@@ -3,6 +3,8 @@ package com.sod.geeting.service.impl;
 import com.sod.geeting.service.GreetingService;
 import com.sod.geeting.domain.Greeting;
 import com.sod.geeting.repository.GreetingRepository;
+import com.sod.geeting.service.GreetingsConsumerService;
+import com.sod.geeting.service.GreetingsProducerService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -22,8 +24,17 @@ public class GreetingServiceImpl implements GreetingService {
 
     private final GreetingRepository greetingRepository;
 
-    public GreetingServiceImpl(GreetingRepository greetingRepository) {
+    private final GreetingsProducerService greetingsProducerService;
+
+    private final GreetingsConsumerService greetingsConsumerService;
+
+    public GreetingServiceImpl(
+        GreetingRepository greetingRepository,
+        GreetingsConsumerService greetingsConsumerService,
+        GreetingsProducerService greetingsProducerService) {
         this.greetingRepository = greetingRepository;
+        this.greetingsConsumerService = greetingsConsumerService;
+        this.greetingsProducerService = greetingsProducerService;
     }
 
     /**
@@ -37,10 +48,7 @@ public class GreetingServiceImpl implements GreetingService {
         log.debug("Request to save Greeting : {}", greeting);
 
         // Send to kafka
-        //TODO
-
-        // Read from kafka
-        // TODO
+        greetingsProducerService.produce(greeting);
 
         // Save to Repo
         return greetingRepository.save(greeting);
