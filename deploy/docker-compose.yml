@@ -23,6 +23,7 @@ services:
     greeting-app:
         image: greeting
         environment:
+            - JAVA_OPTS=-agentlib:jdwp=transport=dt_socket,address=8000,server=y,suspend=n
             - SPRING_PROFILES_ACTIVE=prod,swagger
             - EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/eureka
             - SPRING_CLOUD_CONFIG_URI=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/config
